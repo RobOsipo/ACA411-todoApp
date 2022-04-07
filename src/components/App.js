@@ -20,9 +20,6 @@ class App extends React.Component {
 
         this.setState({ todos: [...this.state.todos, this.state.text], text: '' })
 
-        
-
-
     }
 
     handleDelete = (index) => {
@@ -35,11 +32,13 @@ class App extends React.Component {
 
 
     render() {
-        console.log(this.state)
+       
         return (
             <main>
+    
                 <button onClick={this.onClickHandler}>change isClicked state</button>
                 <p>{this.state.isClicked ? 'True' : 'False'}</p>
+
                 <br />
                 <br />
                 
@@ -52,7 +51,7 @@ class App extends React.Component {
                     {this.state.todos.map((todo, index) => {
                         return (
                             <>
-                                {console.log(todo)}
+                               
                                 <li key={index}>{todo}</li>
                                 <button onClick={() => this.handleDelete(index) }>Delete</button>
 
