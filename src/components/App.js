@@ -1,4 +1,5 @@
 import React from 'react';
+import './app.css'
 
 
 class App extends React.Component {
@@ -37,22 +38,26 @@ class App extends React.Component {
             <main>
     
                 <button onClick={this.onClickHandler}>change isClicked state</button>
-                <p>{this.state.isClicked ? 'True' : 'False'}</p>
+                <p className="state-text">{this.state.isClicked ? 'True' : 'False'}</p>
 
                 <br />
                 <br />
                 
-                <form onSubmit={this.handleSubmit}>
+                <form className="form" onSubmit={this.handleSubmit}>
                     <input type="text" onChange={this.onChangeHandler} value={this.state.text} />
                     <button type="submit">Add Todo</button>
                 </form>
 
-                <ol>
+                <ol className="form">
                     {this.state.todos.map((todo, index) => {
+                        
                         return (
                             <>
-                               
-                                <li key={index}>{todo}</li>
+                                 
+                                <li className="todo-text" key={index}>
+                                    <input onClick={this.onClickHandler}  type="checkbox" />
+                                    {todo}
+                                </li>
                                 <button onClick={() => this.handleDelete(index) }>Delete</button>
 
                             </>
