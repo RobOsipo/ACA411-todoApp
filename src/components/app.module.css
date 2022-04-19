@@ -1,0 +1,49 @@
+:root {
+    --app-bg-color: #348585;
+    --todo-text: #fff;
+    --btn-bg-color: #264686;
+    --btn-shadow: 0 8px 6px -6px black;
+    --pad: 1rem;
+    --state-font: 1.5em;
+    
+}
+
+body {
+    background-color: var(--app-bg-color);
+    background-blend-mode: overlay;
+}
+
+
+.form {
+    width: 300px;
+    margin: 0 auto;
+}
+.todo-text{
+    color: var(--todo-text);
+    font-size: 1rem;
+}
+.state-text {
+    color: var(--todo-text);
+    font-size: var(--state-font);
+}
+.checked {
+    text-decoration: line-through
+}
+.button {
+    background-color: var(--btn-bg-color);
+    color: var(--todo-text);
+    box-shadow: var(--btn-shadow);
+}
+.button:hover {
+    cursor: pointer;
+}
+.button-diff {
+    background-color: var(--btn-bg-color);
+    color: var(--todo-text);
+}
+.button-diff:hover {
+    cursor: pointer;
+}
+.padding {
+    padding: var(--pad);
+}

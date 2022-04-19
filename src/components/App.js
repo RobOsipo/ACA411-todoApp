@@ -1,5 +1,5 @@
 import React from 'react';
-import './app.css'
+import classes from './app.module.css'
 
 
 class App extends React.Component {
@@ -37,30 +37,31 @@ class App extends React.Component {
         return (
             <main>
     
-                <button onClick={this.onClickHandler}>change isClicked state</button>
-                <p className="state-text">{this.state.isClicked ? 'True' : 'False'}</p>
+                <button className={classes.button} onClick={this.onClickHandler}>change isClicked state</button>
+                <p className={classes['state-text']}>{this.state.isClicked ? 'True' : 'False'}</p>
 
                 <br />
                 <br />
                 
-                <form className="form" onSubmit={this.handleSubmit}>
+                <form className={classes.form} onSubmit={this.handleSubmit}>
+                    <h1 className={classes['state-text']}>Time to get some shit done!</h1>
                     <input type="text" onChange={this.onChangeHandler} value={this.state.text} />
-                    <button type="submit">Add Todo</button>
+                    <button className={classes['button-diff']} type="submit">Add Todo</button>
                 </form>
 
-                <ol className="form">
+                <ol className={classes.form}>
                     {this.state.todos.map((todo, index) => {
                         
                         return (
-                            <>
+                            <div className={classes.padding}>
                                  
-                                <li className="todo-text" key={index}>
+                                <li className={classes['todo-text']} key={index}>
                                     <input onClick={this.onClickHandler}  type="checkbox" />
                                     {todo}
                                 </li>
-                                <button onClick={() => this.handleDelete(index) }>Delete</button>
+                                <button className={classes.button} onClick={() => this.handleDelete(index) }>Delete</button>
 
-                            </>
+                            </div>
                         )
                     })}
                 </ol>
